@@ -8,23 +8,23 @@
     <title>Render Raw Gist</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
     <main>
-        <h1>Render Raw Gist</h1>
+        <div class="container">
+            <h1>Render Raw Gist</h1>
 
-        <div>
-            <input id="urlHtml" placeholder="HTML raw gist file url" />
+            <div>
+                <input id="urlHtml" placeholder="HTML raw gist file url" />
 
-            <input id="urlCss" placeholder="CSS raw gist file url" />
+                <input id="urlCss" placeholder="CSS raw gist file url" />
+            </div>
+
+            <button onclick="renderContent()">Render</button>
         </div>
-
-        <button onclick="renderContent()">Render</button>
-
     </main>
 
     <script src="app.js"></script>
-
 </body>
 
 </html>

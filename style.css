@@ -32,7 +32,6 @@ input {
     padding: 14px;
     border: none;
     border-bottom: 1px solid white;
-    width: 300px;
     outline: white;
     line-height: 1.5em;
     background-color: transparent;
@@ -52,7 +51,7 @@ input {
 }
 
 button {
-    width: 10vw;
+    width: 300px;
     margin: 23px;
     padding: 12px 34px 12px 34px;
     border: 1px solid white;
@@ -87,4 +86,10 @@ button:hover {
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+
+@media (max-width: 700px) {
+    input {
+        width: 90%;
+    }
 }

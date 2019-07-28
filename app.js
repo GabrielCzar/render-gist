@@ -17,27 +17,26 @@ function renderContent() {
     renderContentInWindow(urlHtml, urlCss);
 }
 
-function renderContentInWindow(urlHtml, urlCss) {
+async function renderContentInWindow(urlHtml, urlCss) {
     const w = window.open();
     w.document.open();
     w.document.write("<h2>Wait a moment, rendering content...</h2>");
     w.document.close();
 
-    fetch(urlHtml)
-        .then(async res => {
-            const html = await res.text();
-            const page = w.document.querySelector('html');
-            page.innerHTML = html;
+    await fetch(urlHtml).then(async res => {
+        const html = await res.text();
+        const page = w.document.querySelector('html');
+        page.innerHTML = html;
 
-            fetch(urlCss).then(async res => {
-                const css = await res.text();
-                const style = w.document.createElement('style');
-                style.innerText = css;
-                const head = w.document.querySelector('head');
-                head.appendChild(style);
-            });
+    });
 
-        });
+    await fetch(urlCss).then(async res => {
+        const css = await res.text();
+        const style = w.document.createElement('style');
+        style.innerText = css;
+        const head = w.document.querySelector('head');
+        head.appendChild(style);
+    });
 }
 
 const isSecureUrl = (url) => url.includes('https://');

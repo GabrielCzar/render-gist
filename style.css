@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
 * {
     font-family: 'Lato', sans-serif;
     font-size: 22px;
@@ -68,7 +67,6 @@ button {
     -o-transition: color 250ms linear;
     -ms-transition: color 250ms linear;
     transition: color 250ms linear;
-
     -webkit-transition: background-color 300ms linear;
     -moz-transition: background-color 300ms linear;
     -o-transition: background-color 300ms linear;
@@ -92,4 +90,15 @@ button:hover {
     input {
         width: 90%;
     }
+}
+
+#error {
+    color: snow;
+    background-color: #ed3833;
+    padding: 10px;
+    border-radius: 160px;
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: all 600ms linear;
+    transition: all 600ms ease-in-out;
 }
